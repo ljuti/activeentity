@@ -33,8 +33,8 @@ module ActiveEntity
       # raised unless you specify an +:override+ option. <tt>override: true</tt> will
       # cause your type to be used instead of the native type. <tt>override:
       # false</tt> will cause the native type to be used over yours if one exists.
-      def register(type_name, klass = nil, **options, &block)
-        registry.register(type_name, klass, **options, &block)
+      def register(type_name, klass = nil, &block)
+        registry.register(type_name, klass, &block)
       end
 
       def lookup(*args, **kwargs) # :nodoc:
@@ -59,18 +59,18 @@ module ActiveEntity
     # add_modifier({ array: true }, Modifiers::Array)
     # add_modifier({ array_without_blank: true }, Modifiers::ArrayWithoutBlank)
 
-    register(:big_integer, Type::BigInteger, override: false)
-    register(:binary, Type::Binary, override: false)
-    register(:boolean, Type::Boolean, override: false)
-    register(:date, Type::Date, override: false)
-    register(:datetime, Type::DateTime, override: false)
-    register(:decimal, Type::Decimal, override: false)
-    register(:float, Type::Float, override: false)
-    register(:integer, Type::Integer, override: false)
-    register(:unsigned_integer, Type::UnsignedInteger, override: false)
-    register(:json, Type::Json, override: false)
-    register(:string, Type::String, override: false)
-    register(:text, Type::Text, override: false)
-    register(:time, Type::Time, override: false)
+    register(:big_integer, Type::BigInteger)
+    register(:binary, Type::Binary)
+    register(:boolean, Type::Boolean)
+    register(:date, Type::Date)
+    register(:datetime, Type::DateTime)
+    register(:decimal, Type::Decimal)
+    register(:float, Type::Float)
+    register(:integer, Type::Integer)
+    register(:unsigned_integer, Type::UnsignedInteger)
+    register(:json, Type::Json)
+    register(:string, Type::String)
+    register(:text, Type::Text)
+    register(:time, Type::Time)
   end
 end
