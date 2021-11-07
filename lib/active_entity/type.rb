@@ -55,8 +55,9 @@ module ActiveEntity
     String = ActiveModel::Type::String
     Value = ActiveModel::Type::Value
 
-    add_modifier({ array: true }, Modifiers::Array)
-    add_modifier({ array_without_blank: true }, Modifiers::ArrayWithoutBlank)
+    # TODO: Fix modifier support in Registry
+    # add_modifier({ array: true }, Modifiers::Array)
+    # add_modifier({ array_without_blank: true }, Modifiers::ArrayWithoutBlank)
 
     register(:big_integer, Type::BigInteger, override: false)
     register(:binary, Type::Binary, override: false)
